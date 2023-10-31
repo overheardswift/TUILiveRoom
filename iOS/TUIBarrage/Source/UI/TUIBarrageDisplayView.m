@@ -51,8 +51,8 @@
         CGFloat maxHeight = self.superview.mm_h - self.mm_y;
         CGFloat height = self.tableView.contentSize.height > maxHeight ? maxHeight : self.tableView.contentSize.height;
         [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(self.superview).offset(self.mm_x);
-            make.top.equalTo(self.superview).offset(self.originFrame.origin.y);
+            make.leading.equalTo(self).offset(self.mm_x);
+            make.top.equalTo(self).offset(self.originFrame.origin.y);
             make.width.mas_equalTo(self.mm_w);
             make.height.mas_equalTo(height);
         }];
@@ -60,8 +60,8 @@
         CGFloat maxHeight = [UIScreen mainScreen].bounds.size.width - self.mm_y;
         CGFloat height = self.tableView.contentSize.height > maxHeight ? maxHeight : self.tableView.contentSize.height;
         [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(self.superview).offset(self.mm_x);
-            make.top.equalTo(self.superview).offset(80);
+            make.leading.equalTo(self).offset(self.mm_x);
+            make.top.equalTo(self).offset(80);
             make.width.mas_equalTo([UIScreen mainScreen].bounds.size.height);
             make.height.mas_equalTo(height);
         }];
